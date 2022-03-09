@@ -15,10 +15,15 @@
         <%= flash[:notice] %>
       </div>
       <div class="col-2 text-end">
+        <% if @current_user %>
         <!-- TODO: if logged in user, show user's first name and Logout button -->
+          Logged in as: <%= @current_user.first_name %>
+          <%= button_to "Logout", "/sessions/logout", method: :delete %>
+        <% else %>
         <!-- TODO: if logged in user, hide Login and Sign Up -->
-        <a href="/sessions/new" class="btn btn-default">Login</a> |
-        <a href="/users/new" class="btn btn-default">Sign Up</a>
+          <a href="/sessions/new" class="btn btn-default">Login</a> |
+          <a href="/users/new" class="btn btn-default">Sign Up</a>
+        <% end %>
       </div>
     </div>
 
