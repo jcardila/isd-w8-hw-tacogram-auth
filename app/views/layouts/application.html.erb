@@ -32,7 +32,11 @@
         <h1 class="display-6 mb-4">Tacostagram</h1>
       </div>
       <div class="col-2 text-end">
+      <% if @current_user %>
         <a href="/posts/new/" class="btn btn-success">New Post</a>
+      <% else %>
+        Log in to post!
+      <% end %>
       </div>
     </div>
 
